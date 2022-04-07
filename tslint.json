@@ -1,0 +1,19 @@
+{
+    "extends": ["tslint:latest", "tslint-react"],
+    "rules": {
+        "quotemark": [false, "single"],
+        "no-console": [true, "warn"],
+        "object-literal-sort-keys": false,
+        "trailing-comma": false,
+        "jsx-no-multiline-js": false,
+        "ordered-imports": false,
+        "jsx-wrap-multiline": false,
+        "max-line-length": false,
+        "jsx-no-lambda": false,
+        "no-unused-expression": false,
+        "no-submodule-imports": false,
+        "no-implicit-dependencies": false,
+        "no-var-requires": false,
+        "no-shadowed-variable": false
+    }
+}
