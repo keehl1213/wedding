@@ -1,4 +1,4 @@
-import Routes, { AppRoutes, IftttRoutes, FullpageRoutes } from './routerConfig';
+import Routes, { FullpageRoutes } from './routerConfig';
 
 export default Routes;
-export { AppRoutes, IftttRoutes, FullpageRoutes };
+export { FullpageRoutes };
