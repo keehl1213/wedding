@@ -46,45 +46,18 @@ const Header: React.FC = () => {
     };
 
     useEffect(() => {
-        // const bgmObj: HTMLAudioElement | null = document.getElementById(
-        //     'bgm'
-        // ) as HTMLAudioElement;
-        // bgmObj?.volume = 20;
-
-        document.body.addEventListener('mousemove', () => {
-            if (bgmController && bgmController.paused) {
-                // bgmController.muted = false;
-                bgmController?.play();
-                bgmController.volume = 0.2;
-                setMuted(false);
-            }
-        });
+        if (bgmController && bgmController.paused) {
+            bgmController.volume = 0.2;
+        }
         bgmController?.addEventListener(
             'ended',
             () => {
                 bgmController?.play();
+                console.log('end');
             },
             false
         );
     }, [bgmController]);
-
-    const handleplay = () => {
-        document.body.addEventListener('mousemove', () => {
-            if (bgmController && bgmController.paused) {
-                // bgmController.muted = false;
-                bgmController?.play();
-                bgmController.volume = 0.2;
-                setMuted(false);
-            }
-        });
-        bgmController?.addEventListener(
-            'ended',
-            () => {
-                bgmController?.play();
-            },
-            false
-        );
-    };
 
     return (
         <div className="header">
@@ -107,13 +80,13 @@ const Header: React.FC = () => {
                 <h1>哲瑜 & 雯倩</h1>
                 <div>We are married!</div>
                 <audio
+                    // controls
                     id="bgm"
-                    // autoPlay
+                    autoPlay
                     muted={muted}
                     ref={(thisRef) => {
                         bgmController = thisRef;
                     }}
-                    // oncanplay={handleplay}
                 >
                     <source src={bgm} />
                     <track kind="captions" />
@@ -123,6 +96,9 @@ const Header: React.FC = () => {
                         aria-label="mute"
                         onClick={() => {
                             setMuted(false);
+                            if (bgmController?.paused || bgmController?.ended) {
+                                bgmController?.play();
+                            }
                         }}
                     >
                         <VolumeOffIcon />
