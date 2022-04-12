@@ -22,7 +22,7 @@ const App = WaitingComponent(lazy(() => import('containers/App/App')));
 const routes = () => (
     <Authentication>
         <Routes>
-            <Route path={`${FULLPAGE_PREFIX}/*`} element={<App />} />
+            <Route path={`${FULLPAGE_PREFIX}*`} element={<App />} />
             <Route element={EmptyPage} />
         </Routes>
     </Authentication>
@@ -34,9 +34,11 @@ const routes = () => (
 const HomePage = WaitingComponent(
     lazy(() => import('containers/HomePage/HomePage'))
 );
+const Photos = WaitingComponent(lazy(() => import('containers/Photos/Photos')));
 
 const fullpageRoutes: RouteProps[] = [
     { path: PATH.HOME, element: <HomePage /> },
+    { path: PATH.PHOTOS, element: <Photos /> },
     { element: <EmptyPage /> },
 ];
 
