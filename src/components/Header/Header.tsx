@@ -80,7 +80,7 @@ const Header: React.FC = () => {
                 <h1>哲瑜 & 雯倩</h1>
                 <div>We are married!</div>
                 <audio
-                    // controls
+                    loop
                     id="bgm"
                     autoPlay
                     muted={muted}
