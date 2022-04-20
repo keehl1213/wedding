@@ -17,6 +17,7 @@ import './Header.sass';
 interface LinkTabProps {
     label?: string;
     href: string;
+    value?: any;
 }
 
 function LinkTab(props: LinkTabProps) {
@@ -38,10 +39,12 @@ function LinkTab(props: LinkTabProps) {
 const Header: React.FC = () => {
     let bgmController: HTMLAudioElement | null = null;
     const location = useLocation();
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState<string>(
+        location.pathname || PATH.HOME
+    );
     const [muted, setMuted] = React.useState(true);
 
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setValue(newValue);
     };
 
@@ -117,10 +120,26 @@ const Header: React.FC = () => {
             <nav>
                 <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
                     <Tabs value={value} onChange={handleChange} centered>
-                        <LinkTab label="Home" href={PATH.HOME} />
-                        <LinkTab label="Our Story" href={PATH.OUR_STORY} />
-                        <LinkTab label="Photos" href={PATH.PHOTOS} />
-                        <LinkTab label="About Us" href={PATH.ABOUT_US} />
+                        <LinkTab
+                            label="Home"
+                            href={PATH.HOME}
+                            value={PATH.HOME}
+                        />
+                        <LinkTab
+                            label="Our Story"
+                            href={PATH.OUR_STORY}
+                            value={PATH.OUR_STORY}
+                        />
+                        <LinkTab
+                            label="Photos"
+                            href={PATH.PHOTOS}
+                            value={PATH.PHOTOS}
+                        />
+                        <LinkTab
+                            label="About Us"
+                            href={PATH.ABOUT_US}
+                            value={PATH.ABOUT_US}
+                        />
                     </Tabs>
                 </Box>
             </nav>
