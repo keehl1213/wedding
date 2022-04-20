@@ -7,9 +7,9 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Typography from '@mui/material/Typography';
 import useModal from 'hooks/useModal';
 import ProgressiveImage from 'react-progressive-image-loading';
+import useResize from 'hooks/useResize';
 import './Photos.sass';
 
 const style = {
@@ -17,23 +17,25 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '80%',
-    boxShadow: 24,
+    width: '100%',
     p: 4,
     padding: 0,
-    maxHeight: '100%',
+    height: '100%',
     maxWidth: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
 };
 
 const Photos: React.FC = () => {
     const modal = useModal<string>();
+    const [width] = useResize();
     return (
         <div className="photos">
             <ImageList
-                // sx={{ width: 500, height: 450 }}
                 variant="masonry"
-                cols={4}
-                gap={8}
+                cols={width > 640 ? 4 : 3}
+                gap={width > 640 ? 8 : 6}
             >
                 {Object.keys(previewList).map((key: string) => (
                     <ImageListItem
@@ -62,37 +64,29 @@ const Photos: React.FC = () => {
                 }}
             >
                 <Fade in={modal.visible}>
-                    <Box sx={style}>
-                        {/* <Typography
-                            id="transition-modal-title"
-                            variant="h6"
-                            component="h2"
-                        >
-                            Text in a modal
-                        </Typography> */}
-                        <Typography
-                            id="transition-modal-description"
-                            sx={{ mt: 2 }}
-                        >
-                            {modal.modalData && (
-                                <ProgressiveImage
-                                    preview={previewList[modal.modalData]}
-                                    src={photoList[modal.modalData]}
-                                    render={(src, st) => (
-                                        <img
-                                            onClick={modal.closeModal}
-                                            src={src}
-                                            style={{
-                                                maxWidth: '100%',
-                                                maxHeight: '100%',
-                                                ...st,
-                                            }}
-                                            alt="wedding banner"
-                                        />
-                                    )}
-                                />
-                            )}
-                        </Typography>
+                    <Box sx={style} onClick={modal.closeModal}>
+                        {modal.modalData && (
+                            <ProgressiveImage
+                                preview={previewList[modal.modalData]}
+                                src={
+                                    photoList[modal.modalData]
+                                        ? photoList[modal.modalData]
+                                        : previewList[modal.modalData]
+                                }
+                                render={(src, st) => (
+                                    <img
+                                        onClick={modal.closeModal}
+                                        src={src}
+                                        style={{
+                                            maxWidth: '100%',
+                                            maxHeight: '100%',
+                                            ...st,
+                                        }}
+                                        alt="wedding banner"
+                                    />
+                                )}
+                            />
+                        )}
                     </Box>
                 </Fade>
             </Modal>
