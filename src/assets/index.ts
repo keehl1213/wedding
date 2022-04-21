@@ -2,4 +2,6 @@ import * as Photos from './photos';
 
 import * as Previews from './photos/preview';
 
-export { Photos, Previews };
+import * as Storys from './storys';
+
+export { Photos, Previews, Storys };
