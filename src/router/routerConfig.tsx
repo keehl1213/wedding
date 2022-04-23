@@ -38,11 +38,15 @@ const Photos = WaitingComponent(lazy(() => import('containers/Photos/Photos')));
 const OurStory = WaitingComponent(
     lazy(() => import('containers/OurStory/OurStory'))
 );
+const AboutUs = WaitingComponent(
+    lazy(() => import('containers/AboutUs/AboutUs'))
+);
 
 const fullpageRoutes: RouteProps[] = [
     { path: PATH.HOME, element: <HomePage /> },
     { path: PATH.PHOTOS, element: <Photos /> },
     { path: PATH.OUR_STORY, element: <OurStory /> },
+    { path: PATH.ABOUT_US, element: <AboutUs /> },
     { element: <EmptyPage /> },
 ];
 
