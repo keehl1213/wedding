@@ -17,7 +17,9 @@ import './OurStory.sass';
 const storyList = [
     {
         date: 'October 26 ,2018',
-        content: '第一次在朋友約的桌遊聚會相遇',
+        title: '相遇',
+        content:
+            '就跟所有平凡的愛情故事一樣，認識的方式並不是轟轟烈烈的開場、也不是一見鍾情的浪漫。我們的相遇是在一個桌遊聚會中，當時對對方都沒有抱持特別的想法',
         media: (
             <ProgressiveImage
                 preview={Storys.storyFirstLook}
@@ -29,8 +31,25 @@ const storyList = [
         ),
     },
     {
+        date: 'November 28 ,2018',
+        title: '第一句對話？',
+        content:
+            '漸漸地，因為準備野餐聚會有了接觸，發現聊著聊著，聊到掛不了電話。從三天聊一次，到一天一次；從一次聊一小時，到一次三小時',
+        media: (
+            <ProgressiveImage
+                preview={Storys.storyFirstChat}
+                src={Storys.storyFirstChat}
+                render={(src, style) => (
+                    <img src={src} style={style} alt="first chat" />
+                )}
+            />
+        ),
+    },
+    {
         date: 'December 17 ,2018',
-        content: '第一次告白失敗',
+        title: '失敗',
+        content:
+            '但事情不是一直都這麼順利。野餐不久後緊接著就是我的生日，晚上他帶著花束和蛋糕直奔我家告白，雖然我不是沒有考慮過，但因為一些現實因素考量，最後拒絕了',
         media: (
             <video
                 controls
@@ -41,7 +60,9 @@ const storyList = [
     },
     {
         date: 'December 23 ,2018',
-        content: '失敗後再接再厲繼續的第一個約會',
+        title: '還有機會？',
+        content:
+            '告白失敗後，還是偶爾有在聯繫，這天週末他自己安排的週末個人高雄一日遊行程午餐地點離我很近，我並沒有多想就答應了，沒想到連著後面',
         media: (
             <ProgressiveImage
                 preview={Storys.storyFirstDate}
@@ -54,6 +75,7 @@ const storyList = [
     },
     {
         date: 'December 23 ,2018',
+        title: '',
         content: '終於成功在一起',
         media: (
             <ProgressiveImage
@@ -67,6 +89,7 @@ const storyList = [
     },
     {
         date: 'December 4, 2019',
+        title: '',
         content: '第一次一起出國',
         media: (
             <video
@@ -78,6 +101,7 @@ const storyList = [
     },
     {
         date: 'Someday',
+        title: '',
         content: '一起爬山',
         media: (
             <ProgressiveImage
@@ -91,6 +115,7 @@ const storyList = [
     },
     {
         date: 'Someday',
+        title: '',
         content: '一起玩水',
         media: (
             <ProgressiveImage
@@ -104,6 +129,7 @@ const storyList = [
     },
     {
         date: 'August 22, 2021',
+        title: '',
         content: '一起養寵物',
         media: (
             <ProgressiveImage
@@ -117,6 +143,7 @@ const storyList = [
     },
     {
         date: 'October 14, 2021',
+        title: '',
         content: '求婚',
         media: (
             <ProgressiveImage
@@ -130,6 +157,7 @@ const storyList = [
     },
     {
         date: 'March, 2022',
+        title: '',
         content: '遲了一年的新家入厝',
         media: (
             <ProgressiveImage
@@ -143,6 +171,7 @@ const storyList = [
     },
     {
         date: 'Future',
+        title: '',
         content: '未完待續',
         media: (
             <ProgressiveImage
@@ -166,6 +195,7 @@ const OurStory: React.FC = () => {
                     <TimelineItem key={uuidv4()}>
                         <TimelineOppositeContent color="text.secondary">
                             <h2 className="story-date">{story.date}</h2>
+                            <p className="story-title">{story.title}</p>
                             <div className="story-content">{story.content}</div>
                         </TimelineOppositeContent>
                         <TimelineSeparator>
@@ -185,7 +215,8 @@ const OurStory: React.FC = () => {
                 <Divider key={uuidv4()} orientation="vertical" flexItem>
                     {story.media}
                     <h2 className="story-date">{story.date}</h2>
-                    <div className="story-content">{story.content}</div>
+                    <p className="story-title">{story.title}</p>
+                    <pre className="story-content">{story.content}</pre>
                 </Divider>
             )),
         [isComputer]
