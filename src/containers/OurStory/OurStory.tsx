@@ -62,7 +62,7 @@ const storyList = [
         date: 'December 23 ,2018',
         title: '滷肉飯情緣',
         content:
-            '告白失敗後，還是偶爾有在聯繫，這天週末答應一起出門，並沒有其他想法，純粹只是他自己安排的個人高雄一日遊行程午餐地點離我很近，到了晚上我提議去某間餐廳吃晚餐，點完餐後隨即去了廁所，出來後餐點已經在桌上，套餐內含的那碗滷肉飯所有的肥肉已經被移除得乾乾淨淨。\n\r腦中瞬間有很多想法同時浮現，想起曾經有跟他提到不喜歡肥肉的事情，想到和我吃飯的男生從來沒人敢這樣做，他恥力也太高了吧，但不可否認，自己就是容易被這種手法套路',
+            '告白失敗後，還是偶爾有在聯繫，週末答應一起出門，並沒有其他想法，純粹只是他自己安排的個人高雄一日遊行程午餐地點離我很近，到了晚上我提議去某間餐廳吃晚餐，點完餐後隨即去了廁所，出來後餐點已經在桌上，套餐內含的那碗滷肉飯所有太肥的部分已經被移除得乾乾淨淨。\n\r沒想到一個見面不超過三次的人，居然記得我曾經不經意提過討厭肥肉的事情',
         media: (
             <ProgressiveImage
                 preview={Storys.storyFirstDate}
@@ -77,7 +77,7 @@ const storyList = [
         date: 'December 23 ,2018',
         title: '三個月',
         content:
-            '經過一番考慮，我們決定給彼此一個機會試著交往看看，如果三個月後覺得不適合，那就好聚好散',
+            '我們決定給彼此一個機會試著交往看看，如果三個月後覺得不適合，那就好聚好散。幸好經歷一些小小的磨合，順利的度過了',
         media: (
             <ProgressiveImage
                 preview={Storys.storyFlower}
@@ -89,21 +89,9 @@ const storyList = [
         ),
     },
     {
-        date: 'December 4, 2019',
-        title: '出國✈️',
-        content: '沒想到三個月這麼快就過了，很快地就一年，',
-        media: (
-            <video
-                controls
-                src={Storys.storyFirstAbroad}
-                poster={Storys.storyFirstAbroadPreview}
-            />
-        ),
-    },
-    {
         date: 'Someday',
-        title: '',
-        content: '一起爬山',
+        title: '假日我們會一起爬山',
+        content: '',
         media: (
             <ProgressiveImage
                 preview={Storys.storyClimbing}
@@ -116,8 +104,8 @@ const storyList = [
     },
     {
         date: 'Someday',
-        title: '',
-        content: '一起玩水',
+        title: '或者一起潛水',
+        content: '',
         media: (
             <ProgressiveImage
                 preview={Storys.storyDiving}
@@ -129,9 +117,21 @@ const storyList = [
         ),
     },
     {
+        date: 'December 4, 2019',
+        title: '甚至一起去更遠的地方旅行🇰🇷',
+        content: '',
+        media: (
+            <video
+                controls
+                src={Storys.storyFirstAbroad}
+                poster={Storys.storyFirstAbroadPreview}
+            />
+        ),
+    },
+    {
         date: 'August 22, 2021',
-        title: '',
-        content: '一起養寵物',
+        title: '嘗試一起對一個生命負起責任',
+        content: '',
         media: (
             <ProgressiveImage
                 preview={Storys.storyPet}
@@ -144,8 +144,9 @@ const storyList = [
     },
     {
         date: 'October 14, 2021',
-        title: '',
-        content: '求婚',
+        title: '意外的求婚',
+        content:
+            '我是一個對婚禮沒有幻想和粉紅泡泡的人，原本並不期待會有求婚，也對他說沒有這個儀式沒關係。但這位每個情人節都不忘送花的浪漫Duke，精心策劃了一場秘密求婚，甚至影片的音樂都自己作詞作曲，並瞞著我特地跑到錄音室錄一整天',
         media: (
             <ProgressiveImage
                 preview={Storys.storyPropose}
@@ -158,8 +159,9 @@ const storyList = [
     },
     {
         date: 'March, 2022',
-        title: '',
-        content: '遲了一年的新家入厝',
+        title: '家',
+        content:
+            '都是理性派的我們，在決定交往後便有了一起擁有一個家的共識，經過兩年密集的尋覓，終於找到現在這個溫馨的家。但因為疫情的關係，新家入厝也整整遲了一年',
         media: (
             <ProgressiveImage
                 preview={Storys.storyHousewarmingParty}
@@ -172,8 +174,9 @@ const storyList = [
     },
     {
         date: 'Future',
-        title: '',
-        content: '未完待續',
+        title: '故事未完待續',
+        content:
+            '還沒有遇到他之前，曾經我很痛苦迷惘，上網發問，有個網友回應我「如果妳知道妳要的是怎樣的人生，那就像是一段有目的地的旅程，妳會明白眼前的風景都只是過客，妳會明白彎彎繞繞的路途都只是旅程。」\n\r現在我覺得「生命就像一座五彩繽紛的樂園，每個人都是拿著門票的幸運兒，雖然不如意的事十之八九，但既然都來了，那怎麼能不好好玩遍每個設施看遍每個風景？」幸好能在這個樂園遇到一個有趣的靈魂，陪我一起闖蕩。',
         media: (
             <ProgressiveImage
                 preview={Storys.storyMarried}
@@ -225,12 +228,6 @@ const OurStory: React.FC = () => {
     return (
         <div className="our-story">
             {isComputer ? timelineComp : sTimelineComp}
-            {/* <iframe
-                title="memory"
-                src="https://www.google.com/maps/d/embed?mid=195y3R6S2crqow3QRY1m-BAHAwl507ZJO&ehbc=2E312F"
-                width="640"
-                height="480"
-            /> */}
         </div>
     );
 };
