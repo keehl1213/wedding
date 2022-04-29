@@ -60,9 +60,9 @@ const storyList = [
     },
     {
         date: 'December 23 ,2018',
-        title: '還有機會？',
+        title: '滷肉飯情緣',
         content:
-            '告白失敗後，還是偶爾有在聯繫，這天週末他自己安排的週末個人高雄一日遊行程午餐地點離我很近，我並沒有多想就答應了，沒想到連著後面',
+            '告白失敗後，還是偶爾有在聯繫，這天週末答應一起出門，並沒有其他想法，純粹只是他自己安排的個人高雄一日遊行程午餐地點離我很近，到了晚上我提議去某間餐廳吃晚餐，點完餐後隨即去了廁所，出來後餐點已經在桌上，套餐內含的那碗滷肉飯所有的肥肉已經被移除得乾乾淨淨。\n\r腦中瞬間有很多想法同時浮現，想起曾經有跟他提到不喜歡肥肉的事情，想到和我吃飯的男生從來沒人敢這樣做，他恥力也太高了吧，但不可否認，自己就是容易被這種手法套路',
         media: (
             <ProgressiveImage
                 preview={Storys.storyFirstDate}
@@ -75,8 +75,9 @@ const storyList = [
     },
     {
         date: 'December 23 ,2018',
-        title: '',
-        content: '終於成功在一起',
+        title: '三個月',
+        content:
+            '經過一番考慮，我們決定給彼此一個機會試著交往看看，如果三個月後覺得不適合，那就好聚好散',
         media: (
             <ProgressiveImage
                 preview={Storys.storyFlower}
@@ -89,8 +90,8 @@ const storyList = [
     },
     {
         date: 'December 4, 2019',
-        title: '',
-        content: '第一次一起出國',
+        title: '出國✈️',
+        content: '沒想到三個月這麼快就過了，很快地就一年，',
         media: (
             <video
                 controls
