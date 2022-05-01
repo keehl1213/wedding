@@ -12,6 +12,7 @@ import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import IconButton from '@mui/material/IconButton';
 import bgm from 'assets/audios/bgm.mp3';
+import ReactGA from 'react-ga4';
 import './Header.sass';
 
 interface LinkTabProps {
@@ -30,6 +31,7 @@ function LinkTab(props: LinkTabProps) {
             ) => {
                 event.preventDefault();
                 navigate(props.href);
+                ReactGA.send(props.href);
             }}
             {...props}
         />
@@ -98,6 +100,11 @@ const Header: React.FC = () => {
                     <IconButton
                         aria-label="mute"
                         onClick={() => {
+                            ReactGA.event('music click', {
+                                event_category: 'Click',
+                                event_label: '音樂點擊',
+                                value: true,
+                            });
                             setMuted(false);
                             if (bgmController?.paused || bgmController?.ended) {
                                 bgmController?.play();
@@ -111,6 +118,11 @@ const Header: React.FC = () => {
                         aria-label="play"
                         onClick={() => {
                             setMuted(true);
+                            ReactGA.event('music click', {
+                                event_category: 'Click',
+                                event_label: '音樂靜音',
+                                value: false,
+                            });
                         }}
                     >
                         <VolumeUpIcon />

@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TagManager from 'react-gtm-module';
+import ReactGA from 'react-ga4';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const tagManagerArgs = {
-    gtmId: 'G-Y33L7G2J8J',
-};
-
-TagManager.initialize(tagManagerArgs);
+ReactGA.initialize('G-Y33L7G2J8J');
 
 ReactDOM.render(
     <React.StrictMode>

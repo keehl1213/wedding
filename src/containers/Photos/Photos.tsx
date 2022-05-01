@@ -10,6 +10,7 @@ import Fade from '@mui/material/Fade';
 import useModal from 'hooks/useModal';
 import ProgressiveImage from 'react-progressive-image-loading';
 import useResize from 'hooks/useResize';
+import ReactGA from 'react-ga4';
 import './Photos.sass';
 
 const style = {
@@ -40,7 +41,14 @@ const Photos: React.FC = () => {
                 {Object.keys(previewList).map((key: string) => (
                     <ImageListItem
                         key={previewList[key]}
-                        onClick={() => modal.openModal(key)}
+                        onClick={() => {
+                            ReactGA.event('photo click', {
+                                event_category: 'Click',
+                                event_label: '照片點擊',
+                                value: key,
+                            });
+                            modal.openModal(key);
+                        }}
                     >
                         <img
                             className="photos-preview"
