@@ -39,10 +39,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16.x'
-        env:
-            process.env.CI : false
       - run: npm ci
-      - run: npm run build
+      - run: CI=false npm run build
 
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.1
