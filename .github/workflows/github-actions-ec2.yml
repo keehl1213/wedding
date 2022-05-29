@@ -51,3 +51,5 @@ jobs:
           remote_host: ${{ secrets.HOST_DNS }}
           remote_user: ${{ secrets.USERNAME }}
           remote_key: "${{ secrets.EC2_SSH_KEY }}"
+env:
+    process.env.CI : false
