@@ -46,7 +46,7 @@ jobs:
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
-          path: ./*
+          path: /public
           remote_path: ${{ secrets.TARGET_DIR }}
           remote_host: ${{ secrets.HOST_DNS }}
           remote_user: ${{ secrets.USERNAME }}
