@@ -8,6 +8,7 @@ import './HomePage.sass';
 
 const HomePage: React.FC = () => {
     ReactGA.send(PATH.HOME);
+
     return (
         <div className="home-page">
             <ProgressiveImage
@@ -61,7 +62,7 @@ const HomePage: React.FC = () => {
                     width="100%"
                     height="600"
                     frameBorder="0"
-                    style={{ border: 0, marginTop: '-150px' }}
+                    style={{ border: 0, marginTop: -60 }}
                 />
             </div>
         </div>
