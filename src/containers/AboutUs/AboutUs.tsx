@@ -3,10 +3,12 @@ import Grid from '@mui/material/Grid';
 import yuProfile from 'assets/profile-yu.png';
 import chienProfile from 'assets/profile-chien.png';
 import fattieProfile from 'assets/profile-fattie.png';
+import yamProfile from 'assets/profile-yam.png';
 import yuProfileP from 'assets/profile-yu-preview.png';
+import useResize from 'hooks/useResize';
 import chienProfileP from 'assets/profile-chien-preview.png';
 import fattieProfileP from 'assets/profile-fattie-preview.png';
-import useResize from 'hooks/useResize';
+import yamProfileP from 'assets/profile-yam-preview.png';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import IconButton from '@mui/material/IconButton';
 import ProgressiveImage from 'react-progressive-image-loading';
@@ -173,7 +175,54 @@ const AboutUs: React.FC = () => {
                         <Chip label="我喝血" />
                     </div>
                     <div className="profile-des">
-                        大約2021年2月出生，同年8月22日成為家裡的一份子，綽號跳跳雞，金頭凱克鸚鵡，有🐕狗勾的靈魂、🐿花栗鼠的外表、🐇兔兔的腿腿。最喜歡的食物是🍎蘋果
+                        大約2021年2月出生，同年8月22日成為家裡的一份子，金頭凱克鸚鵡，有🐕狗勾的靈魂、🐿花栗鼠的外表、🐇兔兔的腿腿。最喜歡的食物是🍎蘋果
+                    </div>
+                </Grid>
+            </Grid>
+            <Grid container spacing={2}>
+                <Grid
+                    item
+                    xs={profileStyle[mode].profileSpan}
+                    className="profile-des-wrapper"
+                >
+                    <h2>
+                        地瓜
+                        <a
+                            href="https://www.instagram.com/weirdbirdfattie/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <IconButton aria-label="delete">
+                                <InstagramIcon sx={{ fontSize: '20px' }} />
+                            </IconButton>
+                        </a>
+                    </h2>
+                    <div className="profile-tag">
+                        <Chip label="膽小鬼" />
+                        <Chip label="小透明" />
+                        <Chip label="挑食" />
+                    </div>
+                    <div className="profile-des">
+                        大約2022年3月出生，同年5月20日成為家裡的一份子，金頭凱克鸚鵡，最喜歡黏著阿肥，但用瓜子收買也可以摸摸。最愛飛飛，飛到奇怪的地方讓大家都很困擾
+                    </div>
+                </Grid>
+                <Grid
+                    item
+                    xs={profileStyle[mode].picSpan}
+                    className="profile-pic-wrapper"
+                >
+                    <div className="profile-pic">
+                        <ProgressiveImage
+                            preview={yamProfileP}
+                            src={yamProfile}
+                            render={(src, style) => (
+                                <img
+                                    src={src}
+                                    style={style}
+                                    alt="fattie profile"
+                                />
+                            )}
+                        />
                     </div>
                 </Grid>
             </Grid>
